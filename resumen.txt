@@ -1,0 +1,112 @@
+{nmobre_comando} /?
+ejemplo:
+find /?Windows
+Where {nombbre ejecutable}
+Linux
+whereis {nombreapp/programa}
+
+which: Se utiliza para encontrar la ubicación de ejecutables en el PATH del sistema.
+whereis: Se utiliza para buscar la ubicación de ejecutables, fuentes y manuales.Comando	flag	Ejemplo						Descripcion
+mkdir		carpeta						Crea una carpeta en una direccion en la que estemos
+mkdir -p	carpeta/subcarpeta				Crea una carpeta y una subcarpeta
+touch		carpeta/archivo.txt				Crea una carpeta y dentro un archivo
+touch		archivo.txt						Crea un archivo	
+mv		carpeta1/archivo.txt carpeta2			Mueve un archivo o carpeta de un destino a otro 
+cp		carpeta1/archivo.*   carpeta2/			Copia un archivo de un destino a otro
+rm		archivo*					elimina todos los archivos que coincidan
+rmdir		carpeta/carpeta2				elimina una carpeta
+cat 		archivo						muestra el contenido del archivo
+cat 		'.\Mkdir crear directorio.txt'			muestra el contenido del archivo
+cat 		archivo1 archivo2				muestra el contenido de los dos archivos
+head 		archivo.*					trae las primeras 10 lineas de texto del archivo
+head	-n 3	archivo.*					trae las primeras 3 lineas del texto
+tail		archivo.*					trae las ultimas lineas del texto del archivo
+tail	-n 3	archivo.*					trae las 3 ultimas lineas del texto del archivo
+less		archivo.*					le mandamos un archivo y nos puede servir para buscar con filtro de letras o numeros
+								al presionar la H en la interfaz de consola nos mostrara ayuda
+grep  		"hola" archivo.*				le mandamos un parametro de busqueda en este caso "hola" y el lo 								buscara en el archivo que le mandemos
+----------------------------------------------------------------------------------------------------------------------------------
+PIPELINES Y REDIRECTIONS
+Comando		Ejemplo
+cat		paragraph1.txt paragraph2.txt > resparagraph.txt concatenaremos dos archivos en uno nuevo
+>								 Redirecciona la salida estándar a un archivo, creando o sobrescribiendo el archivo.
+>>								 Redirecciona la salida estándar al final de un archivo, agregando 	contenido sin borrar el existente.
+<								 Toma la entrada estándar de un archivo y la proporciona como entrada al comando.
+2>								 Redirecciona los mensajes de error estándar a un archivo.
+&>								 Redirecciona los mensajes de error estándar a un archivo.
+
+		cat archivo.txt | grep "patrón"			El uso de "|" nos ayuda a usar comandos consecutivamente
+----------------------------------------------------------------------------------------------------------------------------------
+Modificar Permisos de archivos
+Get-ChildItem | Format-List
+sudo chown root							Le da permisos a el usuario root "chown asigna permisos"
+sudo chown root							Le da permisos a el usuario root "chown asigna permisos"
+
+----------------------------------------------------------------------------------------------------------------------------------
+Comparaciones aritmeticas en bash
+# -eq es un flag para comparar este es ==
+# -ne es no es igual osea !=
+# -lt significa menor que osea 1<2
+# -le menor o igual que 1<=2
+# -gt mayor que 2>1
+# -ge mayor que 2>=1
+# Para ejecutar un comando primero cambiamos los permisos chmod 700 CondicionalesBash.sh
+# Ejecutamos ./CondicionalesBash.sh
+# wc Cuenta los caracteres, ejemplo: wc archivo.txt
+----------------------------------------------------------------------------------------------------------------------------------
+Logica de condicionales
+#colocamos (()) para usar funciones y llamar variables
+# usamos [[]] parra condicionales de comparracion
+# usamos (()) paar operraciones aritmeticas
+mkdirSolo terminal ->. Windows
+crea
+md {nmbre} -> mkdir
+elimina
+rd {nmbre}
+copiar directorio vacios
+xcopy /E "nombre" {ruta destino}
+copiar directorio llenos
+xcopy /S "nombre" {ruta destino}Primeroos comandos
+muestra todo
+ls -l
+me dice doonde estoy
+pwd
+me regresa a users o home  
+cd ~
+me dice quien soy
+whoami
+nos muestra las subcarpetas
+tree
+agrega una ruta a una cola de rutas -> pushd 1 -> D:\1 -> pushd 2-> D:\1\2 || Me desplaza y la agregea a la ruta
+pushd {ruta}
+elimina el primero en la cola -> me regresa
+popd {ruta}start {nombre del programa}por nmbre
+find /ruta -name "archivo.txt"
+por extension
+find /ruta -name "*.jpg"
+por tamanio
+find /ruta -size +1M
+por tiempo	
+find /ruta -mtime -7
+Windows -> Terminal
+dir -v
+Linux -> Bash
+dirs -vMostrar contenido que empiece por una letra
+ls v*
+Mostrara todas las carpetas que empiecen con v
+
+Para mostrar varias carpetas ccon distintos nombres
+ls [cv]*
+mostrara todas las carpetas que empiecen con C y V
+
+Para moostrar segun extensionn
+ls *.txt
+mostrara toodos los txt
+se puede usar ? -> para mostrar segun la cacntidad de letras de la extension
+ejemplo .txt son 3 entooncces ->
+	ls *.???
+
+Para mstrar los que empizan con mayuscula o minuscula
+ls [[:upper:]]*
+ls [[:lower:]]*ls -a# Este es un comentario en bash
+echo 'Hello World!'
